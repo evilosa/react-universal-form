@@ -1,0 +1,9 @@
+{
+  "name": "react-universal-form",
+  "version": "0.0.1",
+  "description": "React universal form generator",
+  "main": "index.js",
+  "repository": "https://github.com/evilosa/react-universal-form.git",
+  "author": "Bozhkov Aleksandr",
+  "license": "MIT"
+}
