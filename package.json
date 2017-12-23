@@ -4,6 +4,6 @@
   "description": "React universal form generator",
   "main": "index.js",
   "repository": "https://github.com/evilosa/react-universal-form.git",
-  "author": "Bozhkov Aleksandr",
+  "author": "Bozhkov Aleksandr <bojkov@sorc.ru>",
   "license": "MIT"
 }
