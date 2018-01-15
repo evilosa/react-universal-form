@@ -1,6 +1,6 @@
 # SORC: React universal form
 Universal independent form for react application.
-It will be generate form from predefined layout components.
+It will be generate form from predefined PureComponents.
 User must define model store and describe form view.
 All styles must be reconfigurable for end-user needs.
 

@@ -1,10 +1,11 @@
 // @flow
 import * as React from 'react';
 import { fromJS } from 'immutable';
-import { Broadcast, Subscriber } from "react-broadcast"
+import { Broadcast, Subscriber } from 'react-broadcast';
 
 import Button from 'components/Button';
 import TextInput from 'components/TextInput';
+import UpdateBlocker from 'components/UpdateBlocker';
 
 import Color from 'color';
 
@@ -28,21 +29,7 @@ type State = {
   fullName: string,
 }
 
-class UpdateBlocker extends React.Component<any> {
-  shouldComponentUpdate() {
-    // This is how you indicate to React's reconciler that you don't
-    // need to be updated. It's a great way to boost performance when
-    // you're sure (based on your props and state) that your render
-    // output will not change, but it makes it difficult for libraries
-    // to communicate changes down the hierarchy that you don't really
-    // know anything about.
-    return false
-  }
 
-  render() {
-    return this.props.children
-  }
-}
 
 export class Demo extends React.Component<any, State> {
 
