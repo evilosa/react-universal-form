@@ -4,7 +4,7 @@ import Radium from 'radium';
 import { styles } from './styles';
 
 type Props = {
-  style: Object,
+  style?: Object,
   children: any,
 }
 
