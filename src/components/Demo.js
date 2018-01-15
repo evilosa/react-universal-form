@@ -75,6 +75,8 @@ export class Demo extends React.Component<any, State> {
               <Subscriber channel="fullNameChannel">
                 {fullName => <TextInput value={fullName} propName="fullName" onEdit={this._onEdit}/>}
               </Subscriber>
+
+              <TextInput value={this.state.source.fullName} propName="fullName" onEdit={this._onEdit}/>
             </UpdateBlocker>
           </Broadcast>
         </div>
