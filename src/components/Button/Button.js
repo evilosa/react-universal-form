@@ -10,11 +10,15 @@ type Props = {
 
 class Button extends React.Component<Props> {
 
+  _onClick = () => {
+    console.log('dffd');
+  };
+
   render() {
     const { style, children } = this.props;
 
     return (
-      <button style={[styles.base, styles.primary, style]}>{children}</button>
+      <button style={[styles.base, styles.primary, style]} onClick={this._onClick}>{children}</button>
     )
   }
 }

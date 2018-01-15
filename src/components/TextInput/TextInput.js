@@ -1,9 +1,9 @@
 // @flow
 import * as React from 'react';
 
-const TextInput = (props) => {
+const TextInput = ({value, propName, onEdit}) => {
   return (
-    <div>Text input</div>
+    <input value={value} onChange={e => onEdit(propName, e.currentTarget.value)}/>
   );
 };
 
