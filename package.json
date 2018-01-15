@@ -8,8 +8,10 @@
   "license": "MIT",
   "dependencies": {
     "babel-plugin-react-css-modules": "^3.3.2",
-    "immutable": "^3.8.2",
+    "color": "^2.0.1",
     "html-webpack-plugin": "^2.30.1",
+    "immutable": "^3.8.2",
+    "radium": "^0.21.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0"
