@@ -13,6 +13,7 @@
     "immutable": "^3.8.2",
     "radium": "^0.21.0",
     "react": "^16.2.0",
+    "react-broadcast": "^0.6.1",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0"
   },

@@ -13,13 +13,8 @@ class Button extends React.Component<Props> {
   render() {
     const { style, children } = this.props;
 
-    const componentStyles = [styles.base, styles.primary];
-    if (style) {
-      componentStyles.push(style);
-    }
-
     return (
-      <button style={componentStyles}>{children}</button>
+      <button style={[styles.base, styles.primary, style]}>{children}</button>
     )
   }
 }
