@@ -1,13 +1,12 @@
 // @flow
 import * as React from 'react';
-import { fromJS } from 'immutable';
 import { Broadcast, Subscriber } from 'react-broadcast';
+
+import DemoControlledForm from './DemoControlledForm';
 
 import Button from 'components/Button';
 import TextInput from 'components/TextInput';
 import UpdateBlocker from 'components/UpdateBlocker';
-
-import Color from 'color';
 
 import { demoObject } from './demoObject';
 
@@ -15,7 +14,6 @@ type State = {
   source: any,
   fullName: string,
 }
-
 
 
 class Demo extends React.Component<any, State> {
@@ -65,6 +63,7 @@ class Demo extends React.Component<any, State> {
             </UpdateBlocker>
           </Broadcast>
         </div>
+        <DemoControlledForm/>
       </div>
     );
   }
