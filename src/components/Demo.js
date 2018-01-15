@@ -25,6 +25,7 @@ const sourceObject = fromJS({
 
 type State = {
   source: any,
+  fullName: string,
 }
 
 class UpdateBlocker extends React.Component<any> {
@@ -50,14 +51,24 @@ export class Demo extends React.Component<any, State> {
 
     this.state = {
       source: sourceObject,
-    }
+      fullName: 'Baba',
+    };
+
+    setTimeout(() => {
+      this.setState(prev => ({
+        ...prev,
+        source: prev.source.set('fullName', 'Vasia pupkin'),
+        fullName: 'Tata',
+      }),
+        () => console.log('Updated by timeout'));
+    }, 4000);
   }
 
   _onEdit = (propName, value) => {
     this.setState(
       prev => ({
         ...prev,
-        source: sourceObject.set(propName, value),
+        source: prev.source.set(propName, value),
       }),
       () => console.log(this.state.source.toJS())
     );
@@ -70,13 +81,13 @@ export class Demo extends React.Component<any, State> {
         Hello world!
         <div>
           <Button style={customStyle}/>
-          <Broadcast channel="fullNameChannel" value={this.state.source.fullName}>
+          <Broadcast channel="fullNameChannel" value={this.state.source.get('fullName')}>
             <UpdateBlocker>
               <Subscriber channel="fullNameChannel">
                 {fullName => <TextInput value={fullName} propName="fullName" onEdit={this._onEdit}/>}
               </Subscriber>
 
-              <TextInput value={this.state.source.fullName} propName="fullName" onEdit={this._onEdit}/>
+              <TextInput value={this.state.source.get('fullName')} propName="fullName" onEdit={this._onEdit}/>
             </UpdateBlocker>
           </Broadcast>
         </div>
