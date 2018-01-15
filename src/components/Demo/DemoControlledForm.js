@@ -1,6 +1,10 @@
 // @flow
 import * as React from 'react';
+
 import ControlledForm from 'components/ControlledForm';
+import ActionsPane from 'components/ActionsPane';
+import Action from 'components/Action';
+
 import { demoObject } from './demoObject';
 
 type Props = {
@@ -47,7 +51,11 @@ class DemoControlledForm extends React.Component<Props, State> {
         onUpdate={this.handleUpdate}
         onDelete={this.handleDelete}
       >
-        Some data
+        <ActionsPane>
+          <Action type="link" caption="I'm a link action. Go to google!" href="http://google.com"/>
+          <Action type="button" caption="I'm a button action" onClick={this.handleCreate}/>
+          <Action type="icon" onClick={this.handleUpdate}/>
+        </ActionsPane>
       </ControlledForm>
     );
   }

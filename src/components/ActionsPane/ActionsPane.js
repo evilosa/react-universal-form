@@ -1,14 +1,13 @@
 // @flow
 import * as React from 'react';
-import type { ActionTypes } from 'components/Action';
 
 export type ActionsPaneProps = {
-  actions: Array<ActionTypes>,
+  children?: React.Node,
 }
 
 const ActionsPane = (props: ActionsPaneProps) => {
   return (
-    <div>Actions Pane</div>
+    <div>{props.children}</div>
   );
 };
 
