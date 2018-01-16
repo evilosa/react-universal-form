@@ -8,6 +8,7 @@ import ComponentsLayout from 'components/ComponentsLayout';
 
 
 import { demoObject } from './demoObject';
+import ComponentHeader from 'components/ComponentHeader';
 import TextInput from 'components/TextInput';
 
 type Props = {
@@ -62,8 +63,12 @@ class DemoControlledForm extends React.Component<Props, State> {
 
         <ComponentsLayout>
           <ComponentsLayout direction="vertical">
-            <TextInput/>
-            <TextInput/>
+            <ComponentHeader header="Left Title">
+              <TextInput value="Left aligned"/>
+            </ComponentHeader>
+            <ComponentHeader header="Top header" place="top">
+              <TextInput value="Top aligned"/>
+            </ComponentHeader>
           </ComponentsLayout>
           <ComponentsLayout direction="vertical">
             <TextInput/>
