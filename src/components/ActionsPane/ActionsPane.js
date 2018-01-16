@@ -7,15 +7,17 @@ export type ActionsPaneProps = {
   children?: React.Node,
   style: Object,
   direction: 'horizontal' | 'column',
+  align: 'left' | 'center' | 'right',
 }
 
-const ActionsPane = ({children, style, direction}: ActionsPaneProps) => {
+const ActionsPane = ({children, style, direction, align}: ActionsPaneProps) => {
   return (
     <div
       style={
         [
           style.base,
-          style[direction]
+          style[direction],
+          style[direction][align],
         ]
       }
       type="ActionsPane"
@@ -28,6 +30,7 @@ const ActionsPane = ({children, style, direction}: ActionsPaneProps) => {
 ActionsPane.defaultProps = {
   style: defaultStyle,
   direction: 'horizontal',
+  align: 'left',
 };
 
 //$FlowFixMe

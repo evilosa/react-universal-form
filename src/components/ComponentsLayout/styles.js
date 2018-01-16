@@ -12,6 +12,7 @@ export const ComponentsLayoutStyle = {
 
   vertical: {
     flexDirection: 'column',
+    paddingTop: '10px',
   },
 };
 

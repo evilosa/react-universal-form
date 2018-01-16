@@ -77,6 +77,13 @@ class DemoControlledForm extends React.Component<Props, State> {
             <TextInput/>
           </ComponentsLayout>
         </ComponentsLayout>
+
+        <ActionsPane align="right">
+          <Action type="link" caption="I'm a link action. Go to google!" href="http://google.com"/>
+          <Action type="button" caption="I'm a button action" onClick={this.handleCreate}/>
+          <Action type="icon" onClick={this.handleUpdate}/>
+        </ActionsPane>
+
       </ControlledForm>
     );
   }
