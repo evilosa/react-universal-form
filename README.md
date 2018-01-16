@@ -48,4 +48,14 @@ Component for displaying arrays in short format
 Component for working with tables
 
 ## Form 
-Main component for generating form by user provided metadata
+Main component for generating form by user provided model with metadata
+
+```javascript
+const myModel = {
+ { propName: 'name', value: 'Bozhkov Alex', type: 'textInput' },
+ { propName: 'user', value: 'test@mail.test', type: 'textInput' },
+ { propName: 'count', value: 2, type: 'stepper' },
+ { propName: 'client', value: SomeObject, type: 'reference', refProvider: Provider },
+}
+```
+
