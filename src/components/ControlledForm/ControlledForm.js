@@ -9,7 +9,7 @@ type Props = {
   onRead?: Function,
   onUpdate?: Function,
   onDelete?: Function,
-  componentDirection?: 'horizontal' | 'vertical',
+  direction?: 'horizontal' | 'vertical',
   style: Object,
 }
 
@@ -18,13 +18,23 @@ class ControlledForm extends React.Component<Props> {
 
   static defaultProps = {
     style: defaultStyle,
+    direction: 'horizontal',
   };
 
   render() {
-    const { children, style } = this.props;
+    const { children, style, direction} = this.props;
 
     return (
-      <div style={style.base}>{children}</div>
+      <div
+        style={
+          [
+            style.base,
+            style[direction]
+          ]
+        }
+      >
+        {children}
+      </div>
     );
   }
 }
