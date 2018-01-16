@@ -29,4 +29,5 @@ ActionsPane.defaultProps = {
   direction: 'horizontal',
 };
 
+//$FlowFixMe
 export default Radium(ActionsPane);

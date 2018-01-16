@@ -39,4 +39,5 @@ class ControlledForm extends React.Component<ControlledFormProps> {
   }
 }
 
+//$FlowFixMe
 export default Radium(ControlledForm);

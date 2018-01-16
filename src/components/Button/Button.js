@@ -23,4 +23,5 @@ class Button extends React.Component<Props> {
   }
 }
 
+//$FlowFixMe
 export default Radium(Button);
