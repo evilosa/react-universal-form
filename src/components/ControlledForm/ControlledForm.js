@@ -4,7 +4,9 @@ import Radium from 'radium';
 import defaultStyle from './styles';
 
 export type ControlledFormProps = {
-  children?: any,
+  children?: React.Node,
+  header: string,
+  footer: string,
   onCreate?: Function,
   onRead?: Function,
   onUpdate?: Function,
@@ -18,26 +20,28 @@ class ControlledForm extends React.Component<ControlledFormProps> {
   props: ControlledFormProps;
 
   static defaultProps = {
+    header: 'Provide form header',
+    footer: 'Provide form footer',
     style: defaultStyle,
     direction: 'vertical',
   };
 
   render() {
-    const { children, style, direction} = this.props;
+    const { children, style, direction, header, footer} = this.props;
 
     return (
       <div
+        type="ControlledForm"
         style={
           [
             style.root,
             style[direction]
           ]
         }
-        type="ControlledForm"
       >
-        <div>Header</div>
+        <h1 type="ControlledFormHeader" style={style.header}>{header}</h1>
         {children}
-        <div>Footer</div>
+        <div type="ContorlledFormFooter" style={style.footer}>{footer}</div>
       </div>
     );
   }

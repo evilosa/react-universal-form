@@ -7,6 +7,14 @@ export const styles = {
     margin: '10px',
   },
 
+  header: {
+    fontSize: '24px',
+  },
+
+  footer: {
+    fontSize: '10px',
+  },
+
   horizontal: {
     flexDirection: 'row',
   },

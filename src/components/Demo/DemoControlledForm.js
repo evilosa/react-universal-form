@@ -50,6 +50,8 @@ class DemoControlledForm extends React.Component<Props, State> {
   render() {
     return (
       <ControlledForm
+        header="Controlled form demo"
+        footer="Bozhkov Alexandr © bojkov@sorc.ru"
         onCreate={this.handleCreate}
         onRead={this.handleRead}
         onUpdate={this.handleUpdate}
