@@ -9,7 +9,5 @@ type ThemeChannelProps = {
 }
 
 export const ThemeChannelBroadcast = ({theme, children}: ThemeChannelProps) => (
-  <Broadcast channel={themeUpdateChannelName} value={theme}>
-    {children}
-  </Broadcast>
+  <Broadcast channel={themeUpdateChannelName} value={theme} children={children}/>
 );

@@ -7,6 +7,7 @@ import DemoControlledForm from './DemoControlledForm';
 import { demoObject } from './demoObject';
 
 import { ThemeProvider } from 'theme';
+import UpdateBlocker from 'components/UpdateBlocker/UpdateBlocker';
 
 type Props = {
   style: Object,
@@ -63,6 +64,7 @@ class Demo extends React.Component<Props, State> {
   };
 
   _onThemeChange = () => {
+    console.log('Need to change theme!');
     this.setState(prev => ({
       ...prev,
       theme: {
@@ -101,7 +103,9 @@ class Demo extends React.Component<Props, State> {
                 {/*</UpdateBlocker>*/}
               {/*</Broadcast>*/}
             {/*</div>*/}
-            <DemoControlledForm/>
+            {/*<UpdateBlocker>*/}
+              <DemoControlledForm/>
+            {/*</UpdateBlocker>*/}
           </div>
         </div>
       </ThemeProvider>
