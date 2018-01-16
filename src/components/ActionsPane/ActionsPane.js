@@ -18,6 +18,7 @@ const ActionsPane = ({children, style, direction}: ActionsPaneProps) => {
           style[direction]
         ]
       }
+      type="ActionsPane"
     >
       {children}
     </div>

@@ -18,6 +18,7 @@ const TextInput = ({value, propName, onEdit, style}: TextInputProps) => {
           style.base,
         ]
       }
+      type="TextInput"
       value={value}
       onChange={e => onEdit(propName, e.currentTarget.value)}
     />

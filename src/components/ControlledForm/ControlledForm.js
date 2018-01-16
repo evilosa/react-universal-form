@@ -9,6 +9,7 @@ export type ControlledFormProps = {
   onRead?: Function,
   onUpdate?: Function,
   onDelete?: Function,
+  onClose?: Function,
   direction?: 'horizontal' | 'vertical',
   style: Object,
 }
@@ -18,7 +19,7 @@ class ControlledForm extends React.Component<ControlledFormProps> {
 
   static defaultProps = {
     style: defaultStyle,
-    direction: 'horizontal',
+    direction: 'vertical',
   };
 
   render() {
@@ -28,12 +29,15 @@ class ControlledForm extends React.Component<ControlledFormProps> {
       <div
         style={
           [
-            style.base,
+            style.root,
             style[direction]
           ]
         }
+        type="ControlledForm"
       >
+        <div>Header</div>
         {children}
+        <div>Footer</div>
       </div>
     );
   }

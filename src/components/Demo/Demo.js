@@ -1,5 +1,8 @@
 // @flow
 import * as React from 'react';
+import Radium from 'radium';
+import defaultStyle from './styles';
+
 import { Broadcast, Subscriber } from 'react-broadcast';
 
 import DemoControlledForm from './DemoControlledForm';
@@ -10,13 +13,20 @@ import UpdateBlocker from 'components/UpdateBlocker';
 
 import { demoObject } from './demoObject';
 
+type Props = {
+  style: Object,
+}
+
 type State = {
   source: any,
   fullName: string,
 }
 
 
-class Demo extends React.Component<any, State> {
+class Demo extends React.Component<Props, State> {
+  static defaultProps = {
+    style: defaultStyle,
+  };
 
   constructor() {
     super();
@@ -47,23 +57,32 @@ class Demo extends React.Component<any, State> {
   };
 
   render() {
+    const { style } = this.props;
 
     return (
-      <div>
-        Hello world!
-        <div>
-          <Button>Click me!</Button>
-          <Broadcast channel="fullNameChannel" value={this.state.source.get('fullName')}>
-            <UpdateBlocker>
-              <Subscriber channel="fullNameChannel">
-                {fullName => <TextInput value={fullName} propName="fullName" onEdit={this._onEdit}/>}
-              </Subscriber>
-
-              <TextInput value={this.state.source.get('fullName')} propName="fullName" onEdit={this._onEdit}/>
-            </UpdateBlocker>
-          </Broadcast>
+      <div style={style.root} type="DemoPage">
+        <div style={style.navBar} type="DemoPageNavBar">
+          <div>Link 1</div>
+          <div>Link 2</div>
+          <div>Link 3</div>
+          <div>Link 4</div>
         </div>
-        <DemoControlledForm/>
+        <div style={style.content} type="DemoPageContent">
+          {/*Hello world!*/}
+          {/*<div>*/}
+            {/*<Button>Click me!</Button>*/}
+            {/*<Broadcast channel="fullNameChannel" value={this.state.source.get('fullName')}>*/}
+              {/*<UpdateBlocker>*/}
+                {/*<Subscriber channel="fullNameChannel">*/}
+                  {/*{fullName => <TextInput value={fullName} propName="fullName" onEdit={this._onEdit}/>}*/}
+                {/*</Subscriber>*/}
+
+                {/*<TextInput value={this.state.source.get('fullName')} propName="fullName" onEdit={this._onEdit}/>*/}
+              {/*</UpdateBlocker>*/}
+            {/*</Broadcast>*/}
+          {/*</div>*/}
+          <DemoControlledForm/>
+        </div>
       </div>
     );
   }

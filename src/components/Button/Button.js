@@ -18,7 +18,7 @@ class Button extends React.Component<Props> {
     const { style, children } = this.props;
 
     return (
-      <button style={[styles.base, styles.primary, style]} onClick={this._onClick}>{children}</button>
+      <button style={[styles.base, styles.primary, style]} onClick={this._onClick} type="Button">{children}</button>
     )
   }
 }

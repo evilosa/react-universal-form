@@ -39,6 +39,7 @@ export const ComponentHeaderStyle = {
   },
 
   content: {
+    display: 'flex',
     border: '1px solid green',
     flex: '1 0',
     height,

@@ -11,12 +11,15 @@ export type ComponentHeaderType = {
 }
 
 const ComponentHeader = ({header, place, style, children}: ComponentHeaderType) => (
-  <div style={
-    [
-      style.base,
-      style[place],
-    ]
-  }>
+  <div
+    style={
+      [
+        style.base,
+        style[place],
+      ]
+    }
+    type="ComponentHeader"
+  >
     <div style={style.header}>{header}</div>
     <div style={style.content}>{children}</div>
   </div>

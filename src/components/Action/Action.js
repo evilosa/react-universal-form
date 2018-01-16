@@ -10,15 +10,15 @@ export type ActionProps = {
 }
 
 const LinkAction = (caption: string, href: string) => (
-  <a href={href}>{caption}</a>
+  <a href={href} type="LinkAction">{caption}</a>
 );
 
 const ButtonAction = (caption, onClick) => (
-  <button onClick={onClick}>{caption}</button>
+  <button onClick={onClick} type="ButtonAction">{caption}</button>
 );
 
 const IconAction = (icon: string) => (
-  <div>Icon action {icon} is not implemented yet!</div>
+  <div type="IconAction">Icon action {icon} is not implemented yet!</div>
 );
 
 const Action = ({type, caption, href, icon, onClick}: ActionProps) => {
@@ -33,7 +33,7 @@ const Action = ({type, caption, href, icon, onClick}: ActionProps) => {
       return IconAction(icon);
   }
   return (
-    <div>I'm an unknown action</div>
+    <div type="Action">I'm an unknown action</div>
   );
 };
 
