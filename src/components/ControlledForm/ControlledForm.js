@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
-import { ThemeChannelSubscriber } from 'theme';
+import ThemedComponent from 'theme';
 import getComponentStyle from 'theme/getComponentStyle';
 
 export type ControlledFormProps = {
@@ -18,6 +18,25 @@ export type ControlledFormProps = {
   style: Object,
 }
 
+let ControlledFormDumb = (props: any) => (
+  <div
+    type="ControlledForm"
+    style={
+      [
+        props.style.root,
+        props.style[props.direction]
+      ]
+    }
+  >
+    <h1 type="ControlledFormHeader" style={props.style.header}>{props.header}</h1>
+    {props.children}
+    <div type="ControlledFormFooter" style={props.style.footer}>{props.footer}</div>
+  </div>
+);
+
+//$FlowFixMe
+ControlledFormDumb = Radium(ControlledFormDumb);
+
 class ControlledForm extends React.Component<ControlledFormProps> {
   props: ControlledFormProps;
 
@@ -29,33 +48,15 @@ class ControlledForm extends React.Component<ControlledFormProps> {
   };
 
   render() {
-    const { children, style, direction, header, footer} = this.props;
+    const { style } = this.props;
 
     return (
-      <ThemeChannelSubscriber>
-        {theme => {
-          const formStyle = getComponentStyle(theme, 'ControlledForm', style);
-          return (
-            <div
-              type="ControlledForm"
-              style={
-                [
-                  formStyle.root,
-                  formStyle[direction]
-                ]
-              }
-            >
-              <h1 type="ControlledFormHeader" style={formStyle.header}>{header}</h1>
-              {children}
-              <div type="ControlledFormFooter" style={formStyle.footer}>{footer}</div>
-            </div>
-          );
-          }
-        }
-      </ThemeChannelSubscriber>
+      <ThemedComponent sourceStyle={style}>
+        <ControlledFormDumb {...this.props}/>
+      </ThemedComponent>
     );
   }
 }
 
 //$FlowFixMe
-export default Radium(ControlledForm);
+export default ControlledForm;

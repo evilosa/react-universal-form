@@ -6,7 +6,7 @@ import DemoControlledForm from './DemoControlledForm';
 
 import { demoObject } from './demoObject';
 
-import ThemeProvider from 'theme';
+import { ThemeProvider } from 'theme';
 
 type Props = {
   style: Object,
