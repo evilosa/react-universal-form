@@ -3,7 +3,7 @@ import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
 
-type Props = {
+export type ControlledFormProps = {
   children?: any,
   onCreate?: Function,
   onRead?: Function,
@@ -13,8 +13,8 @@ type Props = {
   style: Object,
 }
 
-class ControlledForm extends React.Component<Props> {
-  props: Props;
+class ControlledForm extends React.Component<ControlledFormProps> {
+  props: ControlledFormProps;
 
   static defaultProps = {
     style: defaultStyle,
