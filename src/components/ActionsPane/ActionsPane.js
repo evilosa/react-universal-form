@@ -1,14 +1,32 @@
 // @flow
 import * as React from 'react';
+import Radium from 'radium';
+import defaultStyle from './styles';
 
 export type ActionsPaneProps = {
   children?: React.Node,
+  style: Object,
+  direction: 'horizontal' | 'column',
 }
 
-const ActionsPane = (props: ActionsPaneProps) => {
+const ActionsPane = ({children, style, direction}: ActionsPaneProps) => {
   return (
-    <div>{props.children}</div>
+    <div
+      style={
+        [
+          style.base,
+          style[direction]
+        ]
+      }
+    >
+      {children}
+    </div>
   );
 };
 
-export default ActionsPane;
+ActionsPane.defaultProps = {
+  style: defaultStyle,
+  direction: 'horizontal',
+};
+
+export default Radium(ActionsPane);

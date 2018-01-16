@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react';
+import Radium from 'radium';
+import defaultStyle from './styles';
 
 type Props = {
   children?: any,
@@ -8,18 +10,23 @@ type Props = {
   onUpdate?: Function,
   onDelete?: Function,
   componentDirection?: 'horizontal' | 'vertical',
+  style: Object,
 }
 
 class ControlledForm extends React.Component<Props> {
   props: Props;
 
+  static defaultProps = {
+    style: defaultStyle,
+  };
+
   render() {
-    const { children } = this.props;
+    const { children, style } = this.props;
 
     return (
-      <div>{children}</div>
+      <div style={style.base}>{children}</div>
     );
   }
 }
 
-export default ControlledForm;
+export default Radium(ControlledForm);
