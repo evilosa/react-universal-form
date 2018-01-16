@@ -2,6 +2,8 @@
 import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
+import { ThemeChannelSubscriber } from 'theme';
+import getComponentStyle from 'theme/getComponentStyle';
 
 export type ControlledFormProps = {
   children?: React.Node,
@@ -30,19 +32,27 @@ class ControlledForm extends React.Component<ControlledFormProps> {
     const { children, style, direction, header, footer} = this.props;
 
     return (
-      <div
-        type="ControlledForm"
-        style={
-          [
-            style.root,
-            style[direction]
-          ]
+      <ThemeChannelSubscriber>
+        {theme => {
+          const formStyle = getComponentStyle(theme, 'ControlledForm', style);
+          return (
+            <div
+              type="ControlledForm"
+              style={
+                [
+                  formStyle.root,
+                  formStyle[direction]
+                ]
+              }
+            >
+              <h1 type="ControlledFormHeader" style={formStyle.header}>{header}</h1>
+              {children}
+              <div type="ControlledFormFooter" style={formStyle.footer}>{footer}</div>
+            </div>
+          );
+          }
         }
-      >
-        <h1 type="ControlledFormHeader" style={style.header}>{header}</h1>
-        {children}
-        <div type="ContorlledFormFooter" style={style.footer}>{footer}</div>
-      </div>
+      </ThemeChannelSubscriber>
     );
   }
 }

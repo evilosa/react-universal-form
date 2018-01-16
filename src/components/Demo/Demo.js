@@ -31,7 +31,7 @@ class Demo extends React.Component<Props, State> {
       source: demoObject,
       fullName: 'Baba',
       theme: {
-        NavBar: {
+        ControlledForm: {
           backgroundColor: '#fff',
         },
       },
@@ -43,7 +43,7 @@ class Demo extends React.Component<Props, State> {
         source: prev.source.set('fullName', 'Vasia pupkin'),
         fullName: 'Tata',
         theme: {
-          NavBar: {
+          ControlledForm: {
             backgroundColor: '#000',
           },
         },
@@ -62,6 +62,17 @@ class Demo extends React.Component<Props, State> {
     );
   };
 
+  _onThemeChange = () => {
+    this.setState(prev => ({
+      ...prev,
+      theme: {
+        ControlledForm: {
+          backgroundColor: '#ccc',
+        },
+      },
+    }));
+  };
+
   render() {
     const { style } = this.props;
     const { theme } = this.state;
@@ -74,7 +85,7 @@ class Demo extends React.Component<Props, State> {
             <div>Link 2</div>
             <div>Link 3</div>
             <div>Link 4</div>
-            <div>Change backround to red</div>
+            <div onClick={this._onThemeChange}>Change backround to red</div>
           </div>
           <div style={style.content} type="DemoPageContent">
             {/*Hello world!*/}
