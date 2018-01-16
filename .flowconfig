@@ -23,6 +23,7 @@ module.name_mapper='components' -> '<PROJECT_ROOT>/src/components'
 module.name_mapper='containers' -> '<PROJECT_ROOT>/src/containers'
 module.name_mapper='models' -> '<PROJECT_ROOT>/src/models'
 module.name_mapper='styles' -> '<PROJECT_ROOT>/src/styles'
+module.name_mapper='theme' -> '<PROJECT_ROOT>/src/theme'
 module.name_mapper='utils' -> '<PROJECT_ROOT>/src/utils'
 
 module.name_mapper.extension='css' -> '<PROJECT_ROOT>/flow/CSSModule.js.flow'

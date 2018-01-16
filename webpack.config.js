@@ -26,6 +26,7 @@ module.exports = {
     alias: {
       components: path.resolve('./src/components'),
       features: path.resolve('./src/features'),
+      theme: path.resolve('./src/theme'),
       utils: path.resolve('./src/utils'),
     },
   },

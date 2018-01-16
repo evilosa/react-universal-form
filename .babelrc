@@ -1,7 +1,6 @@
 {
   "plugins": [
     "flow-react-proptypes",
-    ["react-css-modules"],
     "transform-runtime",
     ["extensible-destructuring", {"mode": "optout", "impl": "immutable"}],
     "transform-class-properties",
@@ -13,6 +12,7 @@
         "containers": "./src/containers",
         "models": "./src/models",
         "styles": "./src/styles",
+        "theme": "./src/theme",
         "utils": "./src/utils",
         "tests" : "./tests"
       }
