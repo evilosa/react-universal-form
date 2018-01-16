@@ -3,8 +3,8 @@
 export const TextInputStyle = {
   base: {
     flex: 1,
-    height: '20px',
-    maxHeight: '20px',
+    border: 0,
+    borderRadius: '0 4px 4px 0',
   }
 };
 

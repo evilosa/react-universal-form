@@ -68,7 +68,7 @@ class DemoControlledForm extends React.Component<Props, State> {
             <ComponentHeader header="Left Title">
               <TextInput value="Left aligned"/>
             </ComponentHeader>
-            <ComponentHeader header="Top header" place="top">
+            <ComponentHeader header="Top header">
               <TextInput value="Top aligned"/>
             </ComponentHeader>
           </ComponentsLayout>

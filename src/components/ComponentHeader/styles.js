@@ -1,7 +1,7 @@
 // @flow
 
-const height = '30px';
-const minHeight = '30px';
+const height = '32px';
+const minHeight = '28px';
 const maxHeight = '40px';
 
 export const ComponentHeaderStyle = {
@@ -11,6 +11,7 @@ export const ComponentHeaderStyle = {
     height,
     minHeight,
     maxHeight,
+    margin: '2px',
   },
 
   top: {
@@ -30,21 +31,23 @@ export const ComponentHeaderStyle = {
   },
 
   header: {
-    border: '1px solid red',
     flex: '1 0',
     maxWidth: '150px',
-    height,
-    minHeight,
-    maxHeight,
+    border: '1px solid grey',
+    borderRight: '0',
+    display: 'flex',
+    justifyContent: 'left',
+    alignItems: 'center',
+    padding: '3px 10px',
+    borderRadius: '4px 0px 0px 4px',
+    fontWeight: '600',
   },
 
   content: {
     display: 'flex',
     border: '1px solid green',
     flex: '1 0',
-    height,
-    minHeight,
-    maxHeight,
+    borderRadius: '0px 4px 4px 0px',
   },
 };
 

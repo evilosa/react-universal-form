@@ -6,7 +6,7 @@ import defaultStyle from './styles';
 export type TextInputProps = {
   value: string,
   propName: string,
-  onEdit: Function,
+  onEdit?: Function,
   style: Object,
 }
 
@@ -20,7 +20,7 @@ const TextInput = ({value, propName, onEdit, style}: TextInputProps) => {
       }
       type="TextInput"
       value={value}
-      onChange={e => onEdit(propName, e.currentTarget.value)}
+      onChange={e => onEdit && onEdit(propName, e.currentTarget.value)}
     />
   );
 };
