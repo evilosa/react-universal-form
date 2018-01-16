@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Subscriber } from 'react-broadcast';
-import { themeUpdateChannelName } from './themeUpdateChannel';
+import { themeUpdateChannelName } from './themeUpdateChannelName';
 
 type ThemeChannelProps = {
   theme: Object,

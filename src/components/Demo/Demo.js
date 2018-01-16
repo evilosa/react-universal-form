@@ -15,6 +15,7 @@ type Props = {
 type State = {
   source: any,
   fullName: string,
+  theme: Object,
 }
 
 
@@ -29,6 +30,11 @@ class Demo extends React.Component<Props, State> {
     this.state = {
       source: demoObject,
       fullName: 'Baba',
+      theme: {
+        NavBar: {
+          backgroundColor: '#fff',
+        },
+      },
     };
 
     setTimeout(() => {
@@ -36,6 +42,11 @@ class Demo extends React.Component<Props, State> {
         ...prev,
         source: prev.source.set('fullName', 'Vasia pupkin'),
         fullName: 'Tata',
+        theme: {
+          NavBar: {
+            backgroundColor: '#000',
+          },
+        },
       }),
         () => console.log('Updated by timeout'));
     }, 4000);
@@ -53,15 +64,17 @@ class Demo extends React.Component<Props, State> {
 
   render() {
     const { style } = this.props;
+    const { theme } = this.state;
 
     return (
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <div style={style.root} type="DemoPage">
           <div style={style.navBar} type="DemoPageNavBar">
             <div>Link 1</div>
             <div>Link 2</div>
             <div>Link 3</div>
             <div>Link 4</div>
+            <div>Change backround to red</div>
           </div>
           <div style={style.content} type="DemoPageContent">
             {/*Hello world!*/}
