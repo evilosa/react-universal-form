@@ -4,6 +4,8 @@ import * as React from 'react';
 import ControlledForm from 'components/ControlledForm';
 import ActionsPane from 'components/ActionsPane';
 import Action from 'components/Action';
+import ComponentsLayout from 'components/ComponentsLayout';
+
 
 import { demoObject } from './demoObject';
 
@@ -56,6 +58,11 @@ class DemoControlledForm extends React.Component<Props, State> {
           <Action type="button" caption="I'm a button action" onClick={this.handleCreate}/>
           <Action type="icon" onClick={this.handleUpdate}/>
         </ActionsPane>
+
+        <ComponentsLayout>
+          <ComponentsLayout direction="vertical"/>
+          <ComponentsLayout direction="vertical"/>
+        </ComponentsLayout>
       </ControlledForm>
     );
   }

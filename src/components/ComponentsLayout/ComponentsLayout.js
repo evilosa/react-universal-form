@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import Radium from 'radium';
 import defaultStyle from './styles';
 
 export type ComponentsLayoutProps = {
@@ -25,3 +26,6 @@ ComponentsLayout.defaultProps = {
   style: defaultStyle,
   direction: 'horizontal',
 };
+
+//$FlowFixMe
+export default Radium(ComponentsLayout);
