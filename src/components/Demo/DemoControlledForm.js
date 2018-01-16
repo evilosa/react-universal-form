@@ -8,6 +8,7 @@ import ComponentsLayout from 'components/ComponentsLayout';
 
 
 import { demoObject } from './demoObject';
+import TextInput from 'components/TextInput';
 
 type Props = {
 
@@ -60,8 +61,14 @@ class DemoControlledForm extends React.Component<Props, State> {
         </ActionsPane>
 
         <ComponentsLayout>
-          <ComponentsLayout direction="vertical"/>
-          <ComponentsLayout direction="vertical"/>
+          <ComponentsLayout direction="vertical">
+            <TextInput/>
+            <TextInput/>
+          </ComponentsLayout>
+          <ComponentsLayout direction="vertical">
+            <TextInput/>
+            <TextInput/>
+          </ComponentsLayout>
         </ComponentsLayout>
       </ControlledForm>
     );
