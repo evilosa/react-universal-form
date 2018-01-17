@@ -1,2 +1,3 @@
 // @flow
-export const themeUpdateChannelName = 'ReactUniversalFormThemeChannel';
+
+export const themeUpdateChannelName = 'SorcReactUniversalFormThemeUpdateChannel';

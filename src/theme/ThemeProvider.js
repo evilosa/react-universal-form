@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { defaultThemeStyle } from './defaultThemeStyle';
-import { ThemeChannelBroadcast } from './ThemeChannelBroadcast';
+import { themePublisher } from './themePublisher';
 
 type ThemeChannelProps = {
   theme: Object,
@@ -29,21 +29,22 @@ class ThemeProvider extends React.Component<ThemeChannelProps, ThemeProviderStat
   }
 
   componentWillReceiveProps(next: ThemeChannelProps) {
-    if (next.style) {
-      this.setState(prev => ({
-        ...prev,
-        theme: next.theme,
-      }))
+    if (next.theme) {
+      this.setState(
+        prev => ({
+          ...prev,
+          theme: next.theme,
+        }),
+        () => {
+          console.log('ThemeProvider - Publish new theme!');
+          themePublisher(this.state.theme);
+        }
+      );
     }
   }
 
   render() {
-    const { children } = this.props;
-    const { theme } = this.state;
-
-    return (
-      <ThemeChannelBroadcast theme={theme} children={children}/>
-    );
+    return this.props.children;
   }
 }
 

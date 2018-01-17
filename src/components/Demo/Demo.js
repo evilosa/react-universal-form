@@ -7,7 +7,11 @@ import DemoControlledForm from './DemoControlledForm';
 import { demoObject } from './demoObject';
 
 import { ThemeProvider } from 'theme';
+import PubSub from 'pubsub-js';
+
 import UpdateBlocker from 'components/UpdateBlocker/UpdateBlocker';
+
+import { themePublisher } from 'theme';
 
 type Props = {
   style: Object,
@@ -48,20 +52,9 @@ class Demo extends React.Component<Props, State> {
             backgroundColor: '#000',
           },
         },
-      }),
-        () => console.log('Updated by timeout'));
+      }));
     }, 4000);
   }
-
-  _onEdit = (propName, value) => {
-    this.setState(
-      prev => ({
-        ...prev,
-        source: prev.source.set(propName, value),
-      }),
-      () => console.log(this.state.source.toJS())
-    );
-  };
 
   _onThemeChange = () => {
     console.log('Need to change theme!');
@@ -90,22 +83,9 @@ class Demo extends React.Component<Props, State> {
             <div onClick={this._onThemeChange}>Change backround to red</div>
           </div>
           <div style={style.content} type="DemoPageContent">
-            {/*Hello world!*/}
-            {/*<div>*/}
-              {/*<Button>Click me!</Button>*/}
-              {/*<Broadcast channel="fullNameChannel" value={this.state.source.get('fullName')}>*/}
-                {/*<UpdateBlocker>*/}
-                  {/*<Subscriber channel="fullNameChannel">*/}
-                    {/*{fullName => <TextInput value={fullName} propName="fullName" onEdit={this._onEdit}/>}*/}
-                  {/*</Subscriber>*/}
-
-                  {/*<TextInput value={this.state.source.get('fullName')} propName="fullName" onEdit={this._onEdit}/>*/}
-                {/*</UpdateBlocker>*/}
-              {/*</Broadcast>*/}
-            {/*</div>*/}
-            {/*<UpdateBlocker>*/}
+            <UpdateBlocker>
               <DemoControlledForm/>
-            {/*</UpdateBlocker>*/}
+            </UpdateBlocker>
           </div>
         </div>
       </ThemeProvider>

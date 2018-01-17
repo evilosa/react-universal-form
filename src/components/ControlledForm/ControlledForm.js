@@ -3,6 +3,9 @@ import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
 
+import { themeSubscriber } from 'theme/themeSubscriber';
+import { themeUnsubscriber } from 'theme/themeUnsubscriber';
+
 export type ControlledFormProps = {
   children?: React.Node,
   header: string,
@@ -24,6 +27,20 @@ class ControlledForm extends React.Component<ControlledFormProps> {
     footer: 'Provide form footer',
     style: defaultStyle,
     direction: 'vertical',
+  };
+
+  constructor() {
+    super();
+
+    themeSubscriber(this._themeUpdated);
+  }
+
+  componentWillUnmount() {
+    themeUnsubscriber(this._themeUpdated)
+  }
+
+  _themeUpdated = (msg, data) => {
+    console.log('Controlled form theme was updated!');
   };
 
   render() {
