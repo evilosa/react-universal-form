@@ -9,7 +9,8 @@ export { ThemeProvider, ThemedComponent, getComponentStyle }
 import { themePublisher } from './themePublisher';
 import { themeSubscriber } from './themeSubscriber';
 import { themeUnsubscriber } from './themeUnsubscriber';
+import { themeUpdateChannelName } from './themeUpdateChannelName';
 
-export { themePublisher, themeSubscriber, themeUnsubscriber };
+export { themePublisher, themeSubscriber, themeUnsubscriber, themeUpdateChannelName };
 
 export default ThemedComponent;

@@ -2,9 +2,7 @@
 import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
-
-import { themeSubscriber } from 'theme';
-import { themeUnsubscriber } from 'theme';
+import { ThemedComponent } from 'theme';
 
 export type ControlledFormProps = {
   children?: React.Node,
@@ -29,22 +27,11 @@ class ControlledForm extends React.Component<ControlledFormProps> {
     direction: 'vertical',
   };
 
-  constructor() {
-    super();
-
-    themeSubscriber(this._themeUpdated);
-  }
-
-  componentWillUnmount() {
-    themeUnsubscriber(this._themeUpdated)
-  }
-
-  _themeUpdated = (msg, data) => {
-    console.log('Controlled form theme was updated!');
-  };
-
   render() {
     const { children, style, direction, header, footer} = this.props;
+
+    console.log('Current controlled form style');
+    console.log(style);
 
     return (
       <div
@@ -64,4 +51,4 @@ class ControlledForm extends React.Component<ControlledFormProps> {
 }
 
 //$FlowFixMe
-export default Radium(ControlledForm);
+export default Radium(ThemedComponent(ControlledForm));
