@@ -3,8 +3,8 @@ import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
 
-import { themeSubscriber } from 'theme/themeSubscriber';
-import { themeUnsubscriber } from 'theme/themeUnsubscriber';
+import { themeSubscriber } from 'theme';
+import { themeUnsubscriber } from 'theme';
 
 export type ControlledFormProps = {
   children?: React.Node,

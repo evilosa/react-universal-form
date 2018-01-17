@@ -7,11 +7,8 @@ import DemoControlledForm from './DemoControlledForm';
 import { demoObject } from './demoObject';
 
 import { ThemeProvider } from 'theme';
-import PubSub from 'pubsub-js';
-
 import UpdateBlocker from 'components/UpdateBlocker/UpdateBlocker';
 
-import { themePublisher } from 'theme';
 
 type Props = {
   style: Object,
