@@ -1,6 +1,5 @@
 // @flow
-
-export const actionPaneStyle = {
+export const ActionsPaneStyle = {
   base: {
     display: 'flex',
     flex: 1,
@@ -40,4 +39,4 @@ export const actionPaneStyle = {
   },
 };
 
-export default actionPaneStyle;
+export default ActionsPaneStyle;

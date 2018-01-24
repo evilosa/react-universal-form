@@ -1,16 +1,17 @@
 // @flow
 import * as React from 'react';
 import Radium from 'radium';
-import defaultStyle from './styles';
+import ThemedComponent from 'theme';
 
 export type ActionsPaneProps = {
   children?: React.Node,
   style: Object,
+  inlineStyle?: Object,
   direction: 'horizontal' | 'column',
   align: 'left' | 'center' | 'right',
 }
 
-const ActionsPane = ({children, style, direction, align}: ActionsPaneProps) => {
+const ActionsPane = ({children, style, direction, align, inlineStyle}: ActionsPaneProps) => {
   return (
     <div
       style={
@@ -18,6 +19,7 @@ const ActionsPane = ({children, style, direction, align}: ActionsPaneProps) => {
           style.base,
           style[direction],
           style[direction][align],
+          inlineStyle,
         ]
       }
       type="ActionsPane"
@@ -28,10 +30,9 @@ const ActionsPane = ({children, style, direction, align}: ActionsPaneProps) => {
 };
 
 ActionsPane.defaultProps = {
-  style: defaultStyle,
   direction: 'horizontal',
   align: 'left',
 };
 
 //$FlowFixMe
-export default Radium(ActionsPane);
+export default ThemedComponent(Radium(ActionsPane), 'ActionsPaneStyle');
