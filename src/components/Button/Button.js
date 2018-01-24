@@ -2,7 +2,6 @@
 import * as React from 'react';
 import Radium from 'radium';
 import ThemedComponent from 'theme/ThemedComponent';
-import { ButtonStyle } from './style';
 
 type Props = {
   style: Object,
@@ -12,10 +11,6 @@ type Props = {
 }
 
 class Button extends React.Component<Props> {
-
-  static defaultProps = {
-    style: ButtonStyle,
-  };
 
   _onClick = () => {
     const { style } = this.props;
