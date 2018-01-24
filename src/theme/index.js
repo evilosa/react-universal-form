@@ -14,3 +14,8 @@ import { themeUpdateChannelName } from './themeUpdateChannelName';
 export { themePublisher, themeSubscriber, themeUnsubscriber, themeUpdateChannelName };
 
 export default ThemedComponent;
+
+// Default themes
+import { defaultThemeStyle } from './defaultThemeStyle';
+
+export { defaultThemeStyle };

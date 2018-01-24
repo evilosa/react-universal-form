@@ -5,13 +5,16 @@ import defaultStyle from './styles';
 import DemoControlledForm from './DemoControlledForm';
 
 import { demoObject } from './demoObject';
+import { defaultThemeStyle as defaultTheme } from 'theme';
 
 import { ThemeProvider } from 'theme';
+import Button from 'components/Button';
 import UpdateBlocker from 'components/UpdateBlocker/UpdateBlocker';
 
 
 type Props = {
   style: Object,
+  theme: Object,
 }
 
 type State = {
@@ -24,19 +27,18 @@ type State = {
 class Demo extends React.Component<Props, State> {
   static defaultProps = {
     style: defaultStyle,
+    theme: defaultTheme,
   };
 
-  constructor() {
+  constructor(props: Props) {
     super();
+
+    const { theme } = props;
 
     this.state = {
       source: demoObject,
       fullName: 'Baba',
-      theme: {
-        ControlledForm: {
-          backgroundColor: '#fff',
-        },
-      },
+      theme,
     };
 
     setTimeout(() => {
@@ -45,6 +47,7 @@ class Demo extends React.Component<Props, State> {
         source: prev.source.set('fullName', 'Vasia pupkin'),
         fullName: 'Tata',
         theme: {
+          ...prev.theme,
           ControlledForm: {
             backgroundColor: '#000',
           },
@@ -58,8 +61,9 @@ class Demo extends React.Component<Props, State> {
     this.setState(prev => ({
       ...prev,
       theme: {
+        ...prev.theme,
         ControlledForm: {
-          backgroundColor: '#ccc',
+          backgroundColor: 'red',
         },
       },
     }));
@@ -83,6 +87,7 @@ class Demo extends React.Component<Props, State> {
             <UpdateBlocker>
               <DemoControlledForm/>
             </UpdateBlocker>
+            <Button>Themed button</Button>
           </div>
         </div>
       </ThemeProvider>

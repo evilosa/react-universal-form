@@ -1,10 +1,11 @@
 // @flow
 import * as React from 'react';
 import Radium from 'radium';
-import { styles } from './styles';
+import ThemedComponent from 'theme/ThemedComponent';
 
 type Props = {
-  style?: Object,
+  style: Object,
+  customStyle?: Object,
   children: any,
 }
 
@@ -15,13 +16,13 @@ class Button extends React.Component<Props> {
   };
 
   render() {
-    const { style, children } = this.props;
+    const { style, customStyle, children } = this.props;
 
     return (
-      <button style={[styles.base, styles.primary, style]} onClick={this._onClick} type="Button">{children}</button>
+      <button style={[style.base, style.primary, customStyle]} onClick={this._onClick} type="Button">{children}</button>
     )
   }
 }
 
 //$FlowFixMe
-export default Radium(Button);
+export default Radium(ThemedComponent(Button, 'ButtonStyle'));

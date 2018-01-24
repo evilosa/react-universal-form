@@ -2,7 +2,6 @@
 import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
-import { ThemedComponent } from 'theme';
 
 export type ControlledFormProps = {
   children?: React.Node,
@@ -51,4 +50,4 @@ class ControlledForm extends React.Component<ControlledFormProps> {
 }
 
 //$FlowFixMe
-export default Radium(ThemedComponent(ControlledForm));
+export default Radium(ControlledForm);

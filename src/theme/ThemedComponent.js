@@ -1,25 +1,14 @@
 // @flow
 import * as React from 'react';
-import {themeSubscriber, themeUnsubscriber} from 'theme/index';
+import { themeSubscriber, themeUnsubscriber } from 'theme/index';
 import { defaultThemeStyle } from 'theme/defaultThemeStyle';
 import { themeUpdateChannelName } from 'theme';
-
-// export const ThemedComponent = (defaultStyle: Object) => (WrappedComponent: any) => (props: any) => {
-//
-//   console.log('Component was wrapped!');
-//
-//   console.log(props);
-//   console.log(defaultStyle);
-//
-//   console.log('Theme was changed!');
-//   return <WrappedComponent {...props} style={defaultStyle}/>
-// };
 
 type State = {
   theme: Object,
 }
 
-export const ThemedComponent = (WrappedComponent: any) => {
+export const ThemedComponent = (WrappedComponent: any, styleName: string) => {
 
   return class extends React.Component<any, State> {
     state: State;
@@ -54,8 +43,9 @@ export const ThemedComponent = (WrappedComponent: any) => {
 
     render() {
       const { children } = this.props;
+      const { theme } = this.state;
 
-      return <WrappedComponent style={{rabotaet: 'da'}} children={children}/>;
+      return <WrappedComponent style={theme[styleName]} children={children}/>;
     }
   }
 };

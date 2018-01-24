@@ -1,5 +1,7 @@
 // @flow
+import { ButtonStyle } from 'components/Button';
 
 export const defaultThemeStyle = {
-  navBarBackgroundColor: '#fff',
+  ButtonStyle,
+  // navBarBackgroundColor: '#fff',
 };
