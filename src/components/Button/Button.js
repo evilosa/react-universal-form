@@ -31,8 +31,5 @@ class Button extends React.Component<Props> {
   }
 }
 
-// const ThemedButton = ThemedComponent(Button, 'ButtonStyle');
 //$FlowFixMe
-// export default Radium(ThemedButton);
-// export default Radium(ThemedComponent(Button, 'ButtonStyle'));
 export default ThemedComponent(Radium(Button), 'ButtonStyle');

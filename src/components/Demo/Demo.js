@@ -104,8 +104,10 @@ class Demo extends React.Component<Props, State> {
             <UpdateBlocker>
               <DemoControlledForm/>
             </UpdateBlocker>
-            <Button>Themed button233</Button>
-            <Button customStyle={{primary: { background: '#ffc'}}} inlineStyle={{color: 'black'}}>Themed button233</Button>
+            <UpdateBlocker>
+              <Button>Themed button233</Button>
+              <Button customStyle={{primary: { background: '#ffc'}}} inlineStyle={{color: 'black'}}>Themed button233</Button>
+            </UpdateBlocker>
           </div>
         </div>
       </ThemeProvider>
