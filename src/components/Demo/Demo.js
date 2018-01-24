@@ -63,8 +63,25 @@ class Demo extends React.Component<Props, State> {
       theme: {
         ...prev.theme,
         ControlledForm: {
-          backgroundColor: 'red',
+          background: 'red',
         },
+        ButtonStyle: {
+          base: {
+            color: '#fff',
+            // ':hover': {
+            //   background: Color('#0074d9').lighten(0.2).hex(),
+            // },
+            background: '#4dd981'
+          },
+
+          primary: {
+            background: '#4dd981'
+          },
+
+          warning: {
+            background: '#FF4136'
+          }
+        }
       },
     }));
   };
@@ -87,7 +104,8 @@ class Demo extends React.Component<Props, State> {
             <UpdateBlocker>
               <DemoControlledForm/>
             </UpdateBlocker>
-            <Button>Themed button</Button>
+            <Button>Themed button233</Button>
+            <Button customStyle={{primary: { background: '#ffc'}}} inlineStyle={{color: 'black'}}>Themed button233</Button>
           </div>
         </div>
       </ThemeProvider>

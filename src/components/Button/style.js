@@ -5,7 +5,8 @@ export const ButtonStyle = {
     color: '#fff',
     ':hover': {
       background: Color('#0074d9').lighten(0.2).hex(),
-    }
+    },
+    background: '#4dd981'
   },
 
   primary: {

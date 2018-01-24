@@ -2,27 +2,37 @@
 import * as React from 'react';
 import Radium from 'radium';
 import ThemedComponent from 'theme/ThemedComponent';
+import { ButtonStyle } from './style';
 
 type Props = {
   style: Object,
-  customStyle?: Object,
+  inlineStyle: Object,
   children: any,
 }
 
 class Button extends React.Component<Props> {
 
+  static defaultProps = {
+    style: ButtonStyle,
+  };
+
   _onClick = () => {
-    console.log('dffd');
+    const { style } = this.props;
+    console.log('Button style');
+    console.log(style);
   };
 
   render() {
-    const { style, customStyle, children } = this.props;
+    const { style, inlineStyle, children } = this.props;
 
     return (
-      <button style={[style.base, style.primary, customStyle]} onClick={this._onClick} type="Button">{children}</button>
+      <button style={[style.base, style.primary, inlineStyle]} onClick={this._onClick} type="Button">{children}</button>
     )
   }
 }
 
+// const ThemedButton = ThemedComponent(Button, 'ButtonStyle');
 //$FlowFixMe
-export default Radium(ThemedComponent(Button, 'ButtonStyle'));
+// export default Radium(ThemedButton);
+// export default Radium(ThemedComponent(Button, 'ButtonStyle'));
+export default ThemedComponent(Radium(Button), 'ButtonStyle');

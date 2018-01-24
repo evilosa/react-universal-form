@@ -42,10 +42,10 @@ export const ThemedComponent = (WrappedComponent: any, styleName: string) => {
     };
 
     render() {
-      const { children } = this.props;
+      const { children, customStyle } = this.props;
       const { theme } = this.state;
 
-      return <WrappedComponent style={theme[styleName]} children={children}/>;
+      return <WrappedComponent {...this.props} style={{...theme[styleName], ...customStyle}} children={children}/>;
     }
   }
 };
