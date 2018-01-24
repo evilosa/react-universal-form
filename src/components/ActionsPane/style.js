@@ -12,6 +12,7 @@ export const createActionsPaneStyle = (colors: Object = ActionsPaneColors) => ({
 
   horizontal: {
     flexDirection: 'row',
+    alignItems: 'center',
     maxHeight: '30px',
     left: {
       justifyContent: 'flex-start',
