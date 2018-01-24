@@ -9,11 +9,8 @@ import { demoObject } from './demoObject';
 import { defaultThemeStyle as defaultTheme } from 'theme';
 
 import { ThemeProvider } from 'theme';
-import Button from 'components/Button';
 import NavBar from 'components/NavBar';
 import NavBarItem from 'components/NavBarItem';
-
-import UpdateBlocker from 'components/UpdateBlocker/UpdateBlocker';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
