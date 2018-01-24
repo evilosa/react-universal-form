@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import Radium from 'radium';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import ThemedComponent from 'theme/ThemedComponent';
 
 type Props = {
@@ -9,16 +9,18 @@ type Props = {
   customStyle?: Object,
   inlineStyle?: Object,
   path: string,
+  title: string,
 }
 
-const NavBarItem = ({style, inlineStyle, path}: Props) => (
+const NavBarItem = ({style, inlineStyle, path, title}: Props) => (
   <Link style={[style.base, inlineStyle]} to={path}>
-    {path}
+    {title}
   </Link>
 );
 
 NavBarItem.defaultProps = {
   path: '/',
+  title: 'Link',
 };
 
 //$FlowFixMe

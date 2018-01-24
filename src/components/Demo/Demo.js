@@ -3,6 +3,7 @@ import * as React from 'react';
 import defaultStyle from './styles';
 
 import DemoControlledForm from './DemoControlledForm';
+import DemoThemedButtons from './DemoThemedButtons';
 
 import { demoObject } from './demoObject';
 import { defaultThemeStyle as defaultTheme } from 'theme';
@@ -13,6 +14,8 @@ import NavBar from 'components/NavBar';
 import NavBarItem from 'components/NavBarItem';
 
 import UpdateBlocker from 'components/UpdateBlocker/UpdateBlocker';
+
+import { BrowserRouter, Route } from 'react-router-dom';
 
 
 type Props = {
@@ -95,29 +98,23 @@ class Demo extends React.Component<Props, State> {
 
     return (
       <ThemeProvider theme={theme}>
-        <div style={style.root} type="DemoPage">
-          <NavBar>
-            <NavBarItem path="/en/test"/>
-            <NavBarItem path="/en/test"/>
-            <NavBarItem path="/en/test"/>
-          </NavBar>
-          <div style={style.navBar} type="DemoPageNavBar">
-            <div>Link 1</div>
-            <div>Link 2</div>
-            <div>Link 3</div>
-            <div>Link 4</div>
-            <div onClick={this._onThemeChange}>Change backround to red</div>
+        <BrowserRouter>
+          <div style={style.root} type="DemoPage">
+            <NavBar>
+              <NavBarItem path="/controlled-form" title="Controlled form"/>
+              <NavBarItem path="/themed-buttons" title="Themed buttons"/>
+            </NavBar>
+            <div style={style.navBar} type="DemoPageNavBar">
+              <div>Link 1</div>
+              <div>Link 2</div>
+              <div>Link 3</div>
+              <div>Link 4</div>
+              <div onClick={this._onThemeChange}>Change backround to red</div>
+            </div>
+            <Route path="/controlled-form" component={DemoControlledForm}/>
+            <Route path="/themed-buttons" component={DemoThemedButtons}/>
           </div>
-          <div style={style.content} type="DemoPageContent">
-            <UpdateBlocker>
-              <DemoControlledForm/>
-            </UpdateBlocker>
-            <UpdateBlocker>
-              <Button>Themed button233</Button>
-              <Button customStyle={{primary: { background: '#ffc'}}} inlineStyle={{color: 'black'}}>Themed button233</Button>
-            </UpdateBlocker>
-          </div>
-        </div>
+        </BrowserRouter>
       </ThemeProvider>
     );
   }
