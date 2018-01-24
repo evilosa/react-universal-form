@@ -59,3 +59,7 @@ const myModel = {
 }
 ```
 
+## Notes
+
+Each component wrapped to ThemedComponent. If style and ThemeProvider not defined,
+component will be using defaultThemeStyle. You not need to provide default styles in components.
