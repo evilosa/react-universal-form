@@ -1,9 +1,13 @@
 // @flow
-export const ActionsPaneStyle = {
+export const ActionsPaneColors = {
+  border: 'grey',
+};
+
+export const createActionsPaneStyle = (colors: Object = ActionsPaneColors) => ({
   base: {
     display: 'flex',
     flex: 1,
-    border: '1px solid grey'
+    border: `1px solid ${colors.border}`,
   },
 
   horizontal: {
@@ -37,6 +41,8 @@ export const ActionsPaneStyle = {
       alignItems: 'flex-end',
     }
   },
-};
+});
+
+export const ActionsPaneStyle = createActionsPaneStyle(ActionsPaneColors);
 
 export default ActionsPaneStyle;

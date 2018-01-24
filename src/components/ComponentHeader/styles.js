@@ -33,7 +33,9 @@ export const ComponentHeaderStyle = {
   header: {
     flex: '1 0',
     maxWidth: '150px',
-    border: '1px solid grey',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: 'grey',
     borderRight: '0',
     display: 'flex',
     justifyContent: 'left',

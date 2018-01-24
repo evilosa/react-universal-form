@@ -5,7 +5,7 @@ import defaultStyle from './styles';
 
 export type TextInputProps = {
   value: string,
-  propName: string,
+  propName?: string,
   onEdit?: Function,
   style: Object,
 }
