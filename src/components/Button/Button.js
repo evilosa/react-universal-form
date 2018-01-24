@@ -6,7 +6,8 @@ import { ButtonStyle } from './style';
 
 type Props = {
   style: Object,
-  inlineStyle: Object,
+  customStyle?: Object,
+  inlineStyle?: Object,
   children: any,
 }
 

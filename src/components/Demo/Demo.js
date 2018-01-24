@@ -68,9 +68,9 @@ class Demo extends React.Component<Props, State> {
         ButtonStyle: {
           base: {
             color: '#fff',
-            // ':hover': {
-            //   background: Color('#0074d9').lighten(0.2).hex(),
-            // },
+            ':hover': {
+              background: '#00ff00',
+            },
             background: '#4dd981'
           },
 
