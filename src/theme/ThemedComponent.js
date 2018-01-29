@@ -33,10 +33,7 @@ export const ThemedComponent = (WrappedComponent: any, styleName: string) => {
           prev => ({
             ...prev,
             theme: theme,
-          }),
-          () => {
-            console.log('Themed component: theme was updated!');
-          }
+          })
         );
       }
     };

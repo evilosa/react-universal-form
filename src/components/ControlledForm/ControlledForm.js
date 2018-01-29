@@ -29,9 +29,6 @@ class ControlledForm extends React.Component<ControlledFormProps> {
   render() {
     const { children, style, direction, header, footer} = this.props;
 
-    console.log('Current controlled form style');
-    console.log(style);
-
     return (
       <div
         type="ControlledForm"

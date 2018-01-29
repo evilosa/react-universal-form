@@ -36,7 +36,6 @@ class ThemeProvider extends React.Component<ThemeChannelProps, ThemeProviderStat
           theme: next.theme,
         }),
         () => {
-          console.log('ThemeProvider - Publish new theme!');
           themePublisher(this.state.theme);
         }
       );
