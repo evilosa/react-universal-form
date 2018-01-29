@@ -59,36 +59,6 @@ class Demo extends React.Component<Props, State> {
     }, 4000);
   }
 
-  _onThemeChange = () => {
-    console.log('Need to change theme!');
-    this.setState(prev => ({
-      ...prev,
-      theme: {
-        ...prev.theme,
-        ControlledForm: {
-          background: 'red',
-        },
-        ButtonStyle: {
-          base: {
-            color: '#fff',
-            ':hover': {
-              background: '#00ff00',
-            },
-            background: '#4dd981'
-          },
-
-          primary: {
-            background: '#4dd981'
-          },
-
-          warning: {
-            background: '#FF4136'
-          }
-        }
-      },
-    }));
-  };
-
   render() {
     const { style } = this.props;
     const { theme } = this.state;
@@ -98,16 +68,9 @@ class Demo extends React.Component<Props, State> {
         <BrowserRouter>
           <div style={style.root} type="DemoPage">
             <NavBar>
-              <NavBarItem path="/controlled-form" title="Controlled form"/>
+              <NavBarItem path="/controlled-form" title="Controlled form" active={true}/>
               <NavBarItem path="/themed-buttons" title="Themed buttons"/>
             </NavBar>
-            <div style={style.navBar} type="DemoPageNavBar">
-              <div>Link 1</div>
-              <div>Link 2</div>
-              <div>Link 3</div>
-              <div>Link 4</div>
-              <div onClick={this._onThemeChange}>Change backround to red</div>
-            </div>
             <Route path="/controlled-form" component={DemoControlledForm}/>
             <Route path="/themed-buttons" component={DemoThemedButtons}/>
           </div>

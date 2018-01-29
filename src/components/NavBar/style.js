@@ -6,6 +6,7 @@ export const NavBarColors = {
 
 export const createNavBarStyle = (colors: Object = NavBarColors) => ({
   base: {
+    display: 'flex',
     color: colors.color,
     background: colors.background,
   },
@@ -17,7 +18,7 @@ export const createNavBarStyle = (colors: Object = NavBarColors) => ({
 
   vertical: {
     width: '200px',
-    padding: '15px',
+    padding: '15px 0 15px 15px',
     flexDirection: 'column',
   },
 });

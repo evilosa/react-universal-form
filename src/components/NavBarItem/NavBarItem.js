@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import Radium from 'radium';
-import { Link } from 'react-router-dom';
 import ThemedComponent from 'theme/ThemedComponent';
 
 type Props = {
@@ -10,18 +9,49 @@ type Props = {
   inlineStyle?: Object,
   path: string,
   title: string,
+  isActive: boolean,
+  onClick?: Function,
+  onNavBarNotify?: Function,
 }
 
-const NavBarItem = ({style, inlineStyle, path, title}: Props) => (
-  <Link style={[style.base, inlineStyle]} to={path}>
-    {title}
-  </Link>
-);
+class NavBarItem extends React.Component<Props> {
 
-NavBarItem.defaultProps = {
-  path: '/',
-  title: 'Link',
-};
+  static defaultProps = {
+    path: '/',
+    title: 'Link',
+    active: false,
+  };
+
+  _handleClick = (event) => {
+    const { onNavBarNotify, onClick, path } = this.props;
+
+    if (onNavBarNotify)
+      onNavBarNotify(event, path);
+
+    if (onClick)
+      onClick(event, path);
+  };
+
+  render() {
+    const {style, inlineStyle, title, isActive} = this.props;
+
+    return (
+      <div
+        style={[
+          style.base,
+          isActive && style.active,
+          inlineStyle
+        ]}
+        onClick={this._handleClick}
+      >
+        {title}
+      </div>
+    );
+  }
+}
 
 //$FlowFixMe
-export default ThemedComponent(Radium(NavBarItem), 'NavBarItemStyle');
+const ThemedNavBarItem = ThemedComponent(Radium(NavBarItem), 'NavBarItemStyle');
+ThemedNavBarItem.displayName = 'NavBarItem';
+
+export default ThemedNavBarItem;
