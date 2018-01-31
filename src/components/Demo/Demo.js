@@ -14,6 +14,7 @@ import NavBarItem from 'components/NavBarItem';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
+import { Main } from './pages';
 
 type Props = {
   style: Object,
@@ -68,9 +69,11 @@ class Demo extends React.Component<Props, State> {
         <BrowserRouter>
           <div style={style.root} type="DemoPage">
             <NavBar>
-              <NavBarItem path="/controlled-form" title="Controlled form" active={true}/>
+              <NavBarItem path="/" title="Main"/>
+              <NavBarItem path="/controlled-form" title="Controlled form"/>
               <NavBarItem path="/themed-buttons" title="Themed buttons"/>
             </NavBar>
+            <Route path="/" exact component={Main}/>
             <Route path="/controlled-form" component={DemoControlledForm}/>
             <Route path="/themed-buttons" component={DemoThemedButtons}/>
           </div>
