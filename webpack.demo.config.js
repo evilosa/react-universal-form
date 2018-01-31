@@ -10,7 +10,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   entry: './src/entryPoint.js',
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('demo_dist'),
     filename: 'index_bundle.js',
     publicPath: '/',
   },

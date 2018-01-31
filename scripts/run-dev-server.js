@@ -26,5 +26,5 @@ function spawn(name, colorcode, script, args) {
   });
 }
 
-// spawn('Express Server   ', '\x1b[35m', './node_modules/.bin/nodemon', ['--exec', 'node --harmony', '--watch', `build/server`, '--watch', 'src/', './src/index.js']);
+// spawn('Express Server   ', '\x1b[35m', './node_modules/.bin/nodemon', ['--exec', 'node --harmony', '--watch', `build/server`, '--watch', 'src/', './src/index_demo.js']);
 spawn('WebpackDevServer ', '\x1b[34m', './node_modules/.bin/webpack-dev-server', ['--port', '4001', '--inline', '--hot', '--history-api-fallback', '--config', `webpack.config.js`]);

@@ -1,3 +1,7 @@
-import Demo from './Demo';
+import Action from './Action';
 
-export default Demo;
+import Button from './Button';
+import NavBar from './NavBar';
+import NavBarItem from './NavBarItem';
+
+export { Action, Button, NavBar, NavBarItem };

@@ -31,7 +31,6 @@ bower_components
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
-dist/
 
 # Dependency directories
 node_modules/
@@ -63,4 +62,5 @@ typings/
 .vscode/
 
 # Custom
+demo_dist/
 dist/
