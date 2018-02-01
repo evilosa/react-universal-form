@@ -2,7 +2,7 @@
   "name": "react-universal-form",
   "version": "0.0.3",
   "description": "React universal form generator",
-  "main": "dist/index.js",
+  "main": "/dist/index.js",
   "repository": "https://github.com/evilosa/react-universal-form.git",
   "author": "Bozhkov Aleksandr <bojkov@sorc.ru>",
   "license": "MIT",
