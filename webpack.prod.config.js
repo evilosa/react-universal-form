@@ -2,10 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'index.js': './src/index.js',
+    'components/index.js': './src/components/index.js',
+    'components/Action/index.js': './src/components/Action/index.js',
+    'components/NavBar/index.js': './src/components/NavBar/index.js',
+    'components/NavBarItem/index.js': './src/components/NavBarItem/index.js',
+  },
   output: {
     path: path.resolve('dist'),
-    filename: "index.js",
+    filename: "[name]",
     libraryTarget: 'umd',
     library: 'react-universal-form',
   },
