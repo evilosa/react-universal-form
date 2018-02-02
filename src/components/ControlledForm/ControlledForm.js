@@ -7,11 +7,6 @@ export type ControlledFormProps = {
   children?: React.Node,
   header: string,
   footer: string,
-  onCreate?: Function,
-  onRead?: Function,
-  onUpdate?: Function,
-  onDelete?: Function,
-  onClose?: Function,
   direction?: 'horizontal' | 'vertical',
   style: Object,
 }

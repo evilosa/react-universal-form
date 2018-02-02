@@ -17,7 +17,7 @@ const Layout = ({children, style, direction}: LayoutProps) => (
         style[direction],
       ]
     }
-    type="ComponentLayout"
+    type="Layout"
   >
     {children}
   </div>

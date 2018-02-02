@@ -8,9 +8,11 @@ module.exports = {
     'components/Action/index.js': 'components/Action',
     'components/ActionsPane/index.js': 'components/ActionsPane',
     'components/Button/index.js': 'components/Button',
+    'components/ControlledForm/index.js': 'components/ControlledForm',
     'components/Layout/index.js': 'components/Layout',
     'components/NavBar/index.js': 'components/NavBar',
     'components/NavBarItem/index.js': 'components/NavBarItem',
+    'components/TextInput/index.js': 'components/TextInput',
   },
   output: {
     path: path.resolve('dist'),
