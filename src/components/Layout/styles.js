@@ -1,6 +1,6 @@
 // @flow
 
-export const ComponentsLayoutStyle = {
+export const LayoutStyle = {
   base: {
     display: 'flex',
     flex: '1 0',
@@ -16,4 +16,4 @@ export const ComponentsLayoutStyle = {
   },
 };
 
-export default ComponentsLayoutStyle;
+export default LayoutStyle;

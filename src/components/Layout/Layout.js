@@ -3,13 +3,13 @@ import * as React from 'react';
 import Radium from 'radium';
 import defaultStyle from './styles';
 
-export type ComponentsLayoutProps = {
+export type LayoutProps = {
   children?: React.Node,
   style: Object,
   direction: 'horizontal' | 'vertical'
 }
 
-const ComponentsLayout = ({children, style, direction}: ComponentsLayoutProps) => (
+const Layout = ({children, style, direction}: LayoutProps) => (
   <div
     style={
       [
@@ -23,10 +23,10 @@ const ComponentsLayout = ({children, style, direction}: ComponentsLayoutProps) =
   </div>
 );
 
-ComponentsLayout.defaultProps = {
+Layout.defaultProps = {
   style: defaultStyle,
   direction: 'horizontal',
 };
 
 //$FlowFixMe
-export default Radium(ComponentsLayout);
+export default Radium(Layout);

@@ -4,10 +4,13 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     'index.js': './src/index.js',
-    'components/index.js': './src/components/index.js',
-    'components/Action/index.js': './src/components/Action/index.js',
-    'components/NavBar/index.js': './src/components/NavBar/index.js',
-    'components/NavBarItem/index.js': './src/components/NavBarItem/index.js',
+    'components/index.js': 'components/index.js',
+    'components/Action/index.js': 'components/Action',
+    'components/ActionsPane/index.js': 'components/ActionsPane',
+    'components/Button/index.js': 'components/Button',
+    'components/Layout/index.js': 'components/Layout',
+    'components/NavBar/index.js': 'components/NavBar',
+    'components/NavBarItem/index.js': 'components/NavBarItem',
   },
   output: {
     path: path.resolve('dist'),

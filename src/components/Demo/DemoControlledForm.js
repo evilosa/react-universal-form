@@ -4,7 +4,7 @@ import * as React from 'react';
 import ControlledForm from 'components/ControlledForm';
 import ActionsPane from 'components/ActionsPane';
 import Action from 'components/Action';
-import ComponentsLayout from 'components/ComponentsLayout';
+import ComponentsLayout from 'components/Layout';
 
 
 import { demoObject } from './demoObject';
@@ -65,32 +65,12 @@ class DemoControlledForm extends React.Component<Props, State> {
 
         <ComponentsLayout>
           <ComponentsLayout direction="vertical">
-            <ComponentHeader header="Left Title">
-              <TextInput value="Left aligned"/>
-            </ComponentHeader>
-            <ComponentHeader header="Top header" place="top">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
+              <TextInput title="Name" value="Left aligned"/>
+              <TextInput title="Name international" value="Top aligned"/>
           </ComponentsLayout>
           <ComponentsLayout direction="vertical">
-            <ComponentHeader header="Bottom header" place="bottom">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
-            <ComponentHeader header="Right header" place="right">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
-            <ComponentHeader header="Top header">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
-            <ComponentHeader header="Top header">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
-            <ComponentHeader header="Top header">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
-            <ComponentHeader header="Top header">
-              <TextInput value="Top aligned"/>
-            </ComponentHeader>
+              <TextInput title="Full name" value="Top aligned"/>
+              <TextInput title="Category" value="Top aligned"/>
           </ComponentsLayout>
         </ComponentsLayout>
 
