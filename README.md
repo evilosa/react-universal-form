@@ -63,3 +63,17 @@ const myModel = {
 
 Each component wrapped to ThemedComponent. If style and ThemeProvider not defined,
 component will be using defaultThemeStyle. You not need to provide default styles in components.
+
+## Setup
+Please include `common.js` file from `dist` in main js file. Example for App entry point:
+```javascript
+// @flow
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import 'react-universal-form/dist/common';
+
+import App from 'components/App';
+
+//$FlowIssue
+ReactDOM.render(<App />, document.getElementById('root'));
+``` 
