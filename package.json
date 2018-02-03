@@ -1,6 +1,6 @@
 {
   "name": "react-universal-form",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "React universal form generator",
   "main": "/dist/index.js",
   "repository": "https://github.com/evilosa/react-universal-form.git",
@@ -19,8 +19,7 @@
   "scripts": {
     "dev": "webpack-dev-server --port 4001 --inline --hot --config webpack.demo.config.js",
     "build-demo": "webpack --config webpack.demo.config.js",
-    "build": "webpack --config webpack.prod.config.js",
-    "publish": "npm publish"
+    "build": "webpack --config webpack.prod.config.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

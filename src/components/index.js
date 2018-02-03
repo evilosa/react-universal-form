@@ -3,6 +3,7 @@ import ActionsPane from './ActionsPane';
 import Button from './Button';
 import ComponentsLayout from './Layout';
 import ControlledForm from './ControlledForm';
+import Layout from './Layout';
 import NavBar from './NavBar';
 import NavBarItem from './NavBarItem';
 import TextInput from './TextInput';
@@ -14,6 +15,7 @@ export {
   Button,
   ComponentsLayout,
   ControlledForm,
+  Layout,
   NavBar,
   NavBarItem,
   TextInput,
